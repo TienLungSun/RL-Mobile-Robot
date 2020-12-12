@@ -1,4 +1,4 @@
-We demonstrate training a mobile robot to reach goal using the relative angle information only, without using the relative distance information.
+We train a mobile robot to reach goal using the relative angle only s=(theta, d1~dn), not using relative distance information any more (DeltaX, DeltaY). 
 The Unity package (v. 2020.1.17f1), the training configuration file (ML Agent Release 10), and instructions ppt are included. Please see ppt for instructions.
-The training process is shown at: https://youtu.be/aNPAP3v0gHc
-Demonstration of the training results are shown at https://youtu.be/K3mN6CDPRGc
+The training video is shown at: https://youtu.be/aNPAP3v0gHc
+Demonstration video of the results are shown at https://youtu.be/K3mN6CDPRGc

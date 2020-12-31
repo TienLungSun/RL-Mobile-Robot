@@ -1,1 +1,2 @@
 This folder contains PyTorch implementation of PPO-AC algorithm that interacts with a VE created using Unity through ML Agent. Explanation of the PyTorch implemtation can be found at: https://youtu.be/2iVkPI8JcDU
+The relation between Unity ML Agent training configuration file and this PPO-AC program is explained in https://youtu.be/xFsfQ5qiKvI

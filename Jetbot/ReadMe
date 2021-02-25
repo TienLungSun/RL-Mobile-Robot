@@ -1,4 +1,3 @@
 This folder contains Python code to deploy the RL trained NN to Jetbot
-The live_demo program is from: Nvidia trt_pose GitHub https://github.com/NVIDIA-AI-IOT/trt_pose
-For more information, you can visit Jetson Zoo: https://elinux.org/Jetson_Zoo
-Program 6-9 that collect state information for RL-trained NN to control Jetbot is from Tomas: https://github.com/TomasMendozaHN/YZU_smart_robot
+The live_demo program is from: Nvidia trt_pose GitHub https://github.com/NVIDIA-AI-IOT/trt_pose , for more information, visit Jetson Zoo: https://elinux.org/Jetson_Zoo
+Program 6-9 collect the state information for RL-trained NN to control Jetbot is from Tomas: https://github.com/TomasMendozaHN/YZU_smart_robot , for more information, visit Victor's github: https://github.com/victorhamc

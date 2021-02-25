@@ -1,3 +1,3 @@
 This folder contains Python code to deploy the RL trained NN to Jetbot
 The live_demo program is from: Nvidia trt_pose GitHub https://github.com/NVIDIA-AI-IOT/trt_pose
-For more information, you can visit Jetson Zoo: https://elinux.org/Jetson_Zoo¶
+For more information, you can visit Jetson Zoo: https://elinux.org/Jetson_Zoo

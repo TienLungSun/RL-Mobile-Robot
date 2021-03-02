@@ -1,13 +1,13 @@
 This folder contains Python code to deploy the RL trained NN to Jetbot
 To set up the software, 
 
-#Install Ubuntu OS, python and Jackpack
+Install Ubuntu OS, python and Jackpack
 Go to https://jetbot.org/v0.4.3/software_setup/sd_card.html
 Step 1 - Download the pre-built JetBot SD card image
 Step 2 - Flash JetBot image onto SD card
 Step 3 - Boot Jetson Nano
 
-#Install PyTorch, TorchVision, torch2trt, trt-pose
+Install PyTorch, TorchVision, torch2trt, trt-pose
 Go to https://github.com/victorhamc/jetbot_autoinstall
 
 The live_demo program is from: Nvidia trt_pose GitHub https://github.com/NVIDIA-AI-IOT/trt_pose , for more information, visit Jetson Zoo: https://elinux.org/Jetson_Zoo

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><HW1 Build a training VE in Unity>
+
+</title></head>
+<body>
+    <form method="post" action="./DownloadFile.aspx?Source=Course&amp;CourseType=1&amp;AttachmentID=84769&amp;AttachmentFileName=HW1+lecture.txt" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRkE99b+haQV3ZBm26TDQfyZY8BZWY=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F69017DB" />
+</div>
+    <div>
+    1. Unity hub -> log in
+2. Activate a new authorization -> personal version
+3. You need to have a least one Unity installization
+4. Project -> create a new Unity project -> 3D
+
+5. Layout button (upper right)-> 2x3
+   project window -> one column layout
+
+6. Hierarchy window-> 3d object -> cube, cylinder, plane
+
+7. Camera manipulations in your Scene window
+Roll your middle mouse -> zoom in/out
+alt+press your left mouse -> rotate camera
+Press and hold your middle mouse -> pan your scene window camera
+
+8. Object move/rotate/zoom
+select the object in the Hierarchy window
+click the move/roate/scale button (upper left) 
+move/roate/scale along X,Y,Z axis (RGB)
+If you want to move/roate/scale along X,Y,Z axes simutaneously, select the cube at origin
+
+9. Material 
+Project window -> R click-> Create-> material
+select the color you want
+drag the material ball to the object
+
+10. Place objects
+better use top/side/front view
+change between perspective proj. and orthographic proj.
+
+11. Parent/child relationship in the Hierarchy window
+put the cylinder as the child of the car
+
+12. Trick to visualize an object
+select any object in the Hierarchy window, double click the object to automatically place this object in the middle of your scene window
+
+
+HW1: 3D virtual environment to train AI to navigate, i.e., reach goal while avoiding obstacles
+due 3/11, hard copy
+ 
+    </div>
+    </form>
+</body>
+</html>

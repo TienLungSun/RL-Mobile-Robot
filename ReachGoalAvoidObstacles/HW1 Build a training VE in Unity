@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><HW1 Build a training VE in Unity>
-
-</title></head>
-<body>
-    <form method="post" action="./DownloadFile.aspx?Source=Course&amp;CourseType=1&amp;AttachmentID=84769&amp;AttachmentFileName=HW1+lecture.txt" id="form1">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEzNDM3NzkxOWRkE99b+haQV3ZBm26TDQfyZY8BZWY=" />
-</div>
-
-<div class="aspNetHidden">
-
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F69017DB" />
-</div>
-    <div>
-    1. Unity hub -> log in
+1. Unity hub -> log in
 2. Activate a new authorization -> personal version
 3. You need to have a least one Unity installization
 4. Project -> create a new Unity project -> 3D
@@ -54,8 +37,3 @@ select any object in the Hierarchy window, double click the object to automatica
 
 HW1: 3D virtual environment to train AI to navigate, i.e., reach goal while avoiding obstacles
 due 3/11, hard copy
- 
-    </div>
-    </form>
-</body>
-</html>

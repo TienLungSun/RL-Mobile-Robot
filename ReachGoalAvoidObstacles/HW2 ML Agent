@@ -1,11 +1,12 @@
-1. Install Anaconda on your computer to run python code
-https://github.com/TienLungSun/AI-Lecture-notes/blob/main/Install%20Anaconda.pdf 
+1. Install Anaconda on your computer to run python code 
+https://github.com/TienLungSun/AI-Lecture-notes
+Make sure your User directory does not have Chinese.
 If you want to delete your old Anaconda installation, manually delete the anaconda3 and all .* folders in the User folder where you have your old Anaconda installed. Reboot your computer.
 
 2. Install Unity ML-Agent
-https://github.com/TienLungSun/RL-Mobile-Robot/blob/main/Install%20Unity%20ML%20Agent.pdf
+https://github.com/TienLungSun/RL-Mobile-Robot
 
-3. Import ML Agent package to my Unity project
+3. Import ML Agent package to your Unity project
 Open Package Manager Window
-Add package from disk
+Select "Add package from disk"
 Select ML agent folder/com.unity.ml-agents/package.json

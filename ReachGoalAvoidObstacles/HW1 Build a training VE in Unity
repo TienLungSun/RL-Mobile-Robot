@@ -37,3 +37,34 @@ select any object in the Hierarchy window, double click the object to automatica
 
 HW1: 3D virtual environment to train AI to navigate, i.e., reach goal while avoiding obstacles
 due 3/11, hard copy
+
+
+HW1 due today
+
+1. Add distance sensors to the car
+empty object -> rename "dist sensor"
+place it at the center of the car (z forward, xyz RGB)
+make the dist sensor as the child of the car
+copy-paste (rotate along y, 20, 40, ...) (switch to local coordinate)
+
+2. Add "Rigidbody" to the car so it can detect collision
+mass larger
+use gravity
+freeze rotation along x, y (only allow to rotate along y)
+
+3. Adjust main camera to have good view at game window
+rotate x 90
+projection -> orthographic, suitable size (6.06)
+
+4. Adjust directional light
+
+5. Adjust box collider of the car to cover the head 
+
+6. Add "goal" tag to the goal object
+
+7. Group together to form a training VE
+empty object -> rename "training VE"
+group car, walls, goal, obstacle as the child of training VE
+
+======= finish Unity VE construction
+

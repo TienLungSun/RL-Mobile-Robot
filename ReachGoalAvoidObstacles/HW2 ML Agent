@@ -10,3 +10,27 @@ https://github.com/TienLungSun/RL-Mobile-Robot
 Open Package Manager Window
 Select "Add package from disk"
 Select ML agent folder/com.unity.ml-agents/package.json
+
+4. Summary - 3 softwares
+1) Unity Hub, Unity
+2) Anaconda
+3) ML Agents 
+
+5. Take a look at ML Agent folder
+com.unity.ml-agents\package.json ==> import ML Agent package to Unity project
+ml-agents\setup.py ==> install ML Agent to Anaconda
+config\ppo\*.yaml ==> define the hyper-parameters for RL training
+ml-agents\mlagents\trainers\ppo\trainer.py ==> implement the PPO algorithm
+
+6. Create a ML agent to control your car
+Empty object -> rename 'CarAgent'
+Place CarAgent as the child of the car
+Add "Decision Requester" component
+
+6. Behavior Parameters
+For this agent, we will use vector to reprent the stae s = (stage, facing angle, d1 to d18 from range sensor)
+stage 1~3 stage 1(1, 0, 0), stage2 (0, 1, 0), stage3 (0, 0, 1)
+A total of 3+1+18 = 22 values to represent state s
+2 continuous actions: move forward/backward and turn left/right
+
+7. Agent script

@@ -4,6 +4,6 @@ The folder "Reach goal without obstacles" contains Unity scene and ML Agent conf
 Here are videos of nice training results from students taking this class:	https://youtu.be/1wCCglrMkqc
 Also nice results from students: https://youtu.be/y-BnxeWv52Y
 
-For intelligent robot for elderly care, please see:
-https://roboticsbiz.com/top-seven-companion-and-social-robots-for-elderly-people/
-https://techforaging.com/social-robots-elderly/
+For intelligent robot for elderly care, please see: 
+(1) https://roboticsbiz.com/top-seven-companion-and-social-robots-for-elderly-people/      
+(2) https://techforaging.com/social-robots-elderly/

@@ -1,4 +1,7 @@
 This folder contains Python code to deploy the RL trained NN to Jetbot
+
+Please visit https://jetbot.org/ for more information
+
 To set up the software, 
 
 Install Ubuntu OS, python and Jackpack

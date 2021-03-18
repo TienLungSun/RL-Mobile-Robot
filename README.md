@@ -3,3 +3,6 @@ The folder "Learn PPO(AC)" contains PyTorch implementation of PPO(AC) algorithm 
 The folder "Reach goal without obstacles" contains Unity scene and ML Agent configuration file to train the mobile robot to reach goal in an environment without obstacles.
 Here are videos of nice training results from students taking this class:	https://youtu.be/1wCCglrMkqc
 Also nice results from students: https://youtu.be/y-BnxeWv52Y
+
+For intelligent robot for elderly care, please see:
+https://roboticsbiz.com/top-seven-companion-and-social-robots-for-elderly-people/

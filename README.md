@@ -6,3 +6,4 @@ Also nice results from students: https://youtu.be/y-BnxeWv52Y
 
 For intelligent robot for elderly care, please see:
 https://roboticsbiz.com/top-seven-companion-and-social-robots-for-elderly-people/
+https://techforaging.com/social-robots-elderly/

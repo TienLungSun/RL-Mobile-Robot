@@ -11,7 +11,7 @@ Open Package Manager Window
 Select "Add package from disk"
 Select ML agent folder/com.unity.ml-agents/package.json
 
-4. Summary - 3 softwares
+4. Summary
 1) Unity Hub, Unity
 2) Anaconda
 3) ML Agents 
@@ -26,11 +26,63 @@ ml-agents\mlagents\trainers\ppo\trainer.py ==> implement the PPO algorithm
 Empty object -> rename 'CarAgent'
 Place CarAgent as the child of the car
 Add "Decision Requester" component
+ML Agent will automatically add "Behavior Parameters" and "Agent script"
 
-6. Behavior Parameters
+7. Behavior Parameters
 For this agent, we will use vector to reprent the stae s = (stage, facing angle, d1 to d18 from range sensor)
 stage 1~3 stage 1(1, 0, 0), stage2 (0, 1, 0), stage3 (0, 0, 1)
 A total of 3+1+18 = 22 values to represent state s
 2 continuous actions: move forward/backward and turn left/right
 
-7. Agent script
+8. Create your own Agent script
+using Unity.MLAgents;
+public class xxx : Agent
+{
+   xxx class name must be the same as the cs file name
+   public Transform...
+   RaycastHit 
+   public GameObject...
+   ...
+
+   Start() - run ONLY ONCE when we Play in Unity
+   OnEpisodeBegin() - run every time we start a new training session
+   DetermineStage() - determine the agent's stage (1, 2, 3) based on its relative position with the goal
+   CollectObservations()
+   {
+     22 variables as the state s
+     stage 1: (1, 0, 0, facing angle, d1, d2, ..., d18)
+     stage 2: (0, 1, 0, 0,            d1, d2, ..., d18)
+     stage 3: (0, 0, 1, 0,            d1, d2, ..., d18)
+   }
+
+   OnActionReceived(vectorAction)
+   {
+     1. Perform actions
+     vectorAction[0] - move forward/backwar
+     vectorAction[1] - rotate R/L
+
+     2. Assign rewards for this action
+     every step -0.005*stage
+     reach goal: +100, finish training session
+     hit wall or blocks: -0.5, DO NOT FINISH TRAINING
+
+     Tigure Mother approach - only give POSITIVE reward when reach goal, no other positive reward
+   }
+
+
+    Heuristic()
+    {
+      Human player play to debug
+      Up/Down arrow key to move F/B
+      R/L arrow key to rotate L/R
+    }
+}
+
+9. Save your script
+Assign public variables
+
+10. Manually test
+behavior type -> heuristic
+play and use Up/Down and R/L arrow key to move your car
+
+Finish HW2 

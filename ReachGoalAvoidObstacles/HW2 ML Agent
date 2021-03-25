@@ -81,8 +81,8 @@ public class xxx : Agent
 9. Save your script
 Assign public variables
 
-10. Manually test
+10. Remove the "Agent" script 
+
+11. Manually test
 behavior type -> heuristic
 play and use Up/Down and R/L arrow key to move your car
-
-Finish HW2 

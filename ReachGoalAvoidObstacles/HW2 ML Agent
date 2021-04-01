@@ -32,7 +32,7 @@ See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Ro
       2 continuous actions: move forward/backward and turn left/right
 
 6. Create your own Agent script
-      see "Car_Agent_s7.cs" at my GitHub https://github.com/TienLungSun/RL-Mobile-Robot/tree/main/ReachGoalAvoidObstacles
+      see "Car_Agent_s7.cs" at my https://github.com/TienLungSun/RL-Mobile-Robot
       using Unity.MLAgents;
       public class xxx : Agent
       {
@@ -85,4 +85,10 @@ See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Ro
    play and use Up/Down and R/L arrow key to move your car
 
 10. Train the agent 
-      See "Install Anaconda.pdf" at: https://github.com/TienLungSun/AI-Lecture-notes
+      see "Train ML Agent.pdf" at my https://github.com/TienLungSun/RL-Mobile-Robot
+      change behavior name
+      create a configuration file *.yaml of the same name at \config\ppo
+      cd to the directory where *.yaml is located
+      mlagents-learn MobilRobot.yaml --run-id=1 --force
+      press Play
+      (You might need to download MS VC redistributable)

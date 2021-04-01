@@ -87,7 +87,7 @@ See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Ro
 10. Train the agent 
       see "Train ML Agent.pdf" at my https://github.com/TienLungSun/RL-Mobile-Robot
       change behavior name
-      create a configuration file *.yaml of the same name at \config\ppo
+      create a configuration file *.yaml of the same name at \config\ppo (see MobileRobot.yaml)
       cd to the directory where *.yaml is located
       mlagents-learn MobilRobot.yaml --run-id=1 --force
       press Play

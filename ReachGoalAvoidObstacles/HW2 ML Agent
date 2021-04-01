@@ -84,7 +84,7 @@ See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Ro
    behavior type -> heuristic
    play and use Up/Down and R/L arrow key to move your car
 
-10. Train the agent 
+10. Start to train the agent 
       see "Train ML Agent.pdf" at my https://github.com/TienLungSun/RL-Mobile-Robot
       change behavior name
       create a configuration file *.yaml of the same name at \config\ppo (see MobileRobot.yaml)
@@ -92,3 +92,10 @@ See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Ro
       mlagents-learn MobilRobot.yaml --run-id=1 --force
       press Play
       (You might need to download MS VC redistributable)
+
+11. Monitor the training performance
+      cd to the results folder (… ml-agents-release-10\config\ppo\results)
+      tensorboard --logdir=1
+      open a browser, type localhost:6006
+
+

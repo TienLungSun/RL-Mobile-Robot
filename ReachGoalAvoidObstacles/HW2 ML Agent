@@ -1,7 +1,11 @@
-1. Download ML Agent and import to Unity
-      See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Robot
-      Download Unity ML-Agent folder 
-      Import ML Agent package to your Unity project
+================================= (Step I) Down ML Agent folder ====================================================================
+See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Robot
+Download Unity ML-Agent folder 
+We will use this ML Agent folder downloaded at local computer at both Unity and Anaconda to avoid API inconsistency problem
+
+
+================================= (Step II) Add ML Agent to your Unity project ======================================================     
+1. Import ML Agent package to your Unity project
             Open Package Manager Window ->  Select "Add package from disk" -> Select ML agent folder/com.unity.ml-agents/package.json
             You should see Version 1.6.0-preview. KEEP THIS VERSION, DO NOT UPDATE !
 
@@ -68,8 +72,10 @@
 7. Manually test
    behavior type -> heuristic
    play and use Up/Down and R/L arrow key to move your car
+================================= Now we have created a ML Agent in Unity project and ready to train this agent ======================
 
-=========================================================================================================
+
+================================= (Step III) Run PPO-AC python script to train your agent ============================================
 8. Install Anaconda on your computer to run python code 
       See "Install Anaconda.pdf" at: https://github.com/TienLungSun/AI-Lecture-notes
       Make sure your User directory does not have Chinese.
@@ -92,15 +98,10 @@
       cd to the results folder (… ml-agents-release-10\config\ppo\results)
       tensorboard --logdir=1
       open a browser, type localhost:6006
-===========================================================================================================      
-      
-Summary of ML Agent folder
-      com.unity.ml-agents\package.json ==> import ML Agent package to Unity project
-      ml-agents\setup.py ==> install ML Agent to Anaconda
-      config\ppo\*.yaml ==> define the hyper-parameters for RL training
-      ml-agents\mlagents\trainers\ppo\trainer.py ==> implement the PPO algorithm
 
 
-
-
-
+================================= Appendix Summary of ML Agent folder  ============================================
+com.unity.ml-agents\package.json ==> import ML Agent package to Unity project
+ml-agents\setup.py ==> install ML Agent to Anaconda
+config\ppo\*.yaml ==> define the hyper-parameters for RL training
+ml-agents\mlagents\trainers\ppo\trainer.py ==> implement the PPO algorithm

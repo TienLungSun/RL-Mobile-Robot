@@ -1,8 +1,7 @@
 ================================= (Step I) Down ML Agent folder ====================================================================
-See "Install Unity ML Agent.pdf" at  https://github.com/TienLungSun/RL-Mobile-Robot
 Download Unity ML-Agent folder 
 We will use this ML Agent folder downloaded at local computer at both Unity and Anaconda to avoid API inconsistency problem
-
+(See "Install Unity ML Agent.pdf" for details.)
 
 ================================= (Step II) Add ML Agent to your Unity project ======================================================     
 1. Import ML Agent package to your Unity project

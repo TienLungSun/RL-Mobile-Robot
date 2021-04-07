@@ -1,3 +1,5 @@
+See youtube video https://youtu.be/-gdDenoMogc
+
 ================================= (Step I) Down ML Agent folder ====================================================================
 Download Unity ML-Agent folder 
 We will use this ML Agent folder downloaded at local computer at both Unity and Anaconda to avoid API inconsistency problem
@@ -76,8 +78,8 @@ We will use this ML Agent folder downloaded at local computer at both Unity and 
 
 ================================= (Step III) Run PPO-AC python script to train your agent ============================================
 8. Install Anaconda on your computer to run python code 
-      See "Install Anaconda.pdf" at: https://github.com/TienLungSun/AI-Lecture-notes
       Make sure your User directory does not have Chinese.
+      (See "Install Anaconda.pdf" for details)
 
 9. Install ML Agent to Anaconda
       cd to the directory where setup.py is located
@@ -85,13 +87,12 @@ We will use this ML Agent folder downloaded at local computer at both Unity and 
       pip freeze to check ==> mlagents == 0.22.0,  torch == 1.6.0 or above 
 
 10. Start to train the agent 
-      see "Train ML Agent.pdf" at my https://github.com/TienLungSun/RL-Mobile-Robot
       change behavior name
       create a configuration file *.yaml of the same name at \config\ppo (see MobileRobot.yaml)
       cd to the directory where *.yaml is located
       mlagents-learn MobilRobot.yaml --run-id=1 --force
-      press Play
-      (You might need to download MS VC redistributable)
+      press Play (You might need to download MS VC redistributable)
+      ( see "Train ML Agent.pdf")
       
 11. Watch training performance with tensorboard
       cd to the results folder (… ml-agents-release-10\config\ppo\results)

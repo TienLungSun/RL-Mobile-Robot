@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
+using System.IO;
+using System;
 
 public class Car_Agent_s8 : Agent
 {
@@ -10,6 +12,20 @@ public class Car_Agent_s8 : Agent
     RaycastHit hit;
     public GameObject robot, goal;
     float rayLength = 4.0f;
+    string filePath;
+    StreamWriter writer;
+
+    void Start()
+    {
+        filePath = "trajectory.csv";
+        writer = new StreamWriter(filePath);
+        writer.WriteLine("time, x, y");
+    }
+
+    private void OnApplicationQuit()
+    {
+        writer.Close();
+    }
 
     void Update()
     {
@@ -117,11 +133,13 @@ public class Car_Agent_s8 : Agent
     {
         robot.transform.Translate(0, 0, vectorAction[0]*0.2f);
         robot.transform.Rotate(0, vectorAction[1]*10.0f, 0);
+
+        //record time and (x, y) position
+        string t = System.DateTime.Now.ToLongTimeString();
+        float x = robot.transform.position.x;
+        float z = robot.transform.position.z;
+        string s = t + ", " + x.ToString() + ", " + z.ToString();
+        writer.WriteLine(s);
     }
 
-    public override void Heuristic(float[] actionsOut)
-        {
-            actionsOut[0] = Input.GetAxis("Vertical");
-            actionsOut[1] = Input.GetAxis("Horizontal");
-        }
 }

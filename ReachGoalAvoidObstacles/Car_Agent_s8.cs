@@ -19,7 +19,7 @@ public class Car_Agent_s8 : Agent
     {
         filePath = "trajectory.csv";
         writer = new StreamWriter(filePath);
-        writer.WriteLine("time, x, y");
+        writer.WriteLine("time, x, y, reward");
     }
 
     private void OnApplicationQuit()
@@ -134,11 +134,32 @@ public class Car_Agent_s8 : Agent
         robot.transform.Translate(0, 0, vectorAction[0]*0.2f);
         robot.transform.Rotate(0, vectorAction[1]*10.0f, 0);
 
-        //record time and (x, y) position
+        //record time, (x, y) position and reward
         string t = System.DateTime.Now.ToLongTimeString();
         float x = robot.transform.position.x;
         float z = robot.transform.position.z;
-        string s = t + ", " + x.ToString() + ", " + z.ToString();
+
+        float reward = 0.0f;
+        int newStage = DetermineStage();
+        reward = reward- 0.005f * newStage; //punish more steps no. and steps at larger state no.
+        for (int i = 0; i < 18; i++) //Part II: rewards based on distance sensors, e.g. Lidar
+        {
+            if (Physics.Raycast(distSensor[i].position, distSensor[i].forward, out hit, rayLength))
+            {
+                if (hit.collider.tag == "goal" && ((i >= 0 && i <= 2) || (i >= 16 && i <= 17)) && hit.distance <= 2.0f) // if reach goal with front end
+                {
+
+                    reward = reward + 100;
+                }
+                else if (hit.distance < 1.0f)  //too close to obstacle
+                {
+                    reward = reward -0.05f;
+                }
+            }
+        }
+
+        //write to file
+        string s = t + ", " + x.ToString() + ", " + z.ToString() + ", " + reward.ToString();
         writer.WriteLine(s);
     }
 

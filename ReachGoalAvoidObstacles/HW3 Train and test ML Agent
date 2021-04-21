@@ -26,9 +26,21 @@
 
 7. Play 
 
-8. Examine the output data file
+8. Examine the output Excel file "trajectory.csv" 
 
-================================= (II) Experiment with NN structure ====================================================================
+
+================================= (II) Test performance ================================================================================
+
+1. Run N times to collect N trajectory files 
+
+2. Calculate steps and rewards 
+
+3. Draw box plots of steps and rewards
+
+4. Show trajectory of these tests
+
+
+================================= (III) Experiment with NN structure ====================================================================
 1. Open MobileRobot.yaml 
 
 2. max. steps -> 2M
@@ -39,12 +51,12 @@
 
 5. Examine tensorboard (reward, episode, value loss, actor loss) 
 
-6. Test the trained NN model
+6. Test the trained NN model 
 
-================================= (III) How NN interacts with the training VE  ====================================================================
+================================= (IV) How NN interacts with the training VE  ====================================================================
 time horizon, buffer size (1000, 20480) -> (500, 10000)
 
-================================= (IV) Reward engineering  =========================================================================================
+================================= (V) Reward engineering  =========================================================================================
 every step -0.005*stage
 reach goal: +100, finish training session, start a new training
 hit wall or blocks: -0.5, DO NOT FINISH TRAINING

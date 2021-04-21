@@ -1,7 +1,7 @@
 ================================= (I) Build a test scene ====================================================================
-1. One environment with more obstacles
+1. One scene with more obstacles
 
-2. Remove "Decision Requester" component
+2. Remove "Decision Requester" component (we will manually do decision request)
 
 3. Import a trained NN model (e.g., MobileRobot.onnx) to project
 
@@ -25,14 +25,29 @@
 6. Save your script and assign public variables
 
 ================================= (II) Experiment with NN structure ====================================================================
-1. Open MobileRobot.yaml
+1. Open MobileRobot.yaml 
 
-2. NN (3, 512) -> (2, 128)
+2. max. steps -> 2M
 
-3. Train 
+3. NN (3, 512) -> (2, 128)
 
-4. Examine tensorboard (reward, episode, value loss, actor loss)
+4. Train 
 
-5. Test the trained NN model
+5. Examine tensorboard (reward, episode, value loss, actor loss) 
 
-================================= (II) Experiment with NN structure ====================================================================
+6. Test the trained NN model
+
+================================= (III) How NN interacts with the training VE  ====================================================================
+time horizon, buffer size (1000, 20480) -> (500, 10000)
+
+================================= (IV) Reward engineering  =========================================================================================
+every step -0.005*stage
+reach goal: +100, finish training session, start a new training
+hit wall or blocks: -0.5, DO NOT FINISH TRAINING
+
+
+
+reward 
+every step -0.005*stage
+           reach goal: +100, finish training session
+           hit wall or blocks: -0.5, DO NOT FINISH TRAINING

@@ -1,1 +1,38 @@
+================================= (I) Build a test scene ====================================================================
+1. One environment with more obstacles
 
+2. Remove "Decision Requester" component
+
+3. Import a trained NN model (e.g., MobileRobot.onnx) to project
+
+4. Behavior Parameters
+      Model -> Assign a trained NN model
+      Behavior type -> Inference only
+      
+5. Create your own Agent script
+      see "Car_Agent_s8.cs" at my https://github.com/TienLungSun/RL-Mobile-Robot
+      Start() - run ONLY ONCE when we Play in Unity
+      OnEpisodeBegin() - run every time we start a new training session
+      Update() - run every game frame
+          if the agent reach goal -> stop action
+          else run RequestDecision() to call NN to perform actions
+      DetermineStage() - determine the agent's stage (1, 2, 3) based on its relative position with the goal
+      CollectObservations() - (1, 0, 0, facing angle, d1, d2, ..., d18), (0, 1, 0, 0, d1-d18), (0, 0, 1, 0, d1-d18)
+      OnActionReceived(vectorAction) - 
+           1. Perform actions
+           2. record (t, x, y)
+           
+6. Save your script and assign public variables
+
+================================= (II) Experiment with NN structure ====================================================================
+1. Open MobileRobot.yaml
+
+2. NN (3, 512) -> (2, 128)
+
+3. Train 
+
+4. Examine tensorboard (reward, episode, value loss, actor loss)
+
+5. Test the trained NN model
+
+================================= (II) Experiment with NN structure ====================================================================

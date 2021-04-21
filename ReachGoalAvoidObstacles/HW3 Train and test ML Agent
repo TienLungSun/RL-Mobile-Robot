@@ -48,10 +48,3 @@ time horizon, buffer size (1000, 20480) -> (500, 10000)
 every step -0.005*stage
 reach goal: +100, finish training session, start a new training
 hit wall or blocks: -0.5, DO NOT FINISH TRAINING
-
-
-
-reward 
-every step -0.005*stage
-           reach goal: +100, finish training session
-           hit wall or blocks: -0.5, DO NOT FINISH TRAINING

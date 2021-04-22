@@ -7,16 +7,22 @@ using System.IO;
 using System;
 
 public class Car_Agent_s8 : Agent
-{
+{  
     public Transform[] distSensor = new Transform[18];
     RaycastHit hit;
     public GameObject robot, goal;
     float rayLength = 4.0f;
+    Vector3 CarOriginalPos;
+    int TotalTests, NoTest;
     string filePath;
     StreamWriter writer;
 
     void Start()
     {
+        CarOriginalPos = robot.transform.position;
+        TotalTests = 2; // test the NN model performance for N times
+        NoTest = 1;
+        string t = System.DateTime.Now.ToString();
         filePath = "trajectory.csv";
         writer = new StreamWriter(filePath);
         writer.WriteLine("time, x, y, reward");
@@ -27,25 +33,46 @@ public class Car_Agent_s8 : Agent
         writer.Close();
     }
 
-    void Update()
+    public override void OnEpisodeBegin()
     {
-        bool ReachGoal = false;
+        robot.transform.position = CarOriginalPos; //Back to original position
+        robot.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+    }
 
+    Boolean ReachGoal()
+    {
+        bool result=false;
         for (int i = 0; i < 18; i++)
         {
             if (Physics.Raycast(distSensor[i].position, distSensor[i].forward, out hit, rayLength))
             {
                 if (hit.collider.tag == "goal" && ((i >= 0 && i <= 2) || (i >= 16 && i <= 17)) && hit.distance <= 2.0f) // if reach goal with front end
                 {
-                    ReachGoal = true;
-                    print("Goal!");
+                    result = true;
                 }
             }
         }
-        if(ReachGoal == false)
+        return result;
+    }
+
+    void Update()
+    {
+        
+        if (NoTest <= TotalTests)
         {
-            RequestDecision();
+            if (ReachGoal() == false)
+            {
+                RequestDecision();
+            }
+            else //reach goal
+            {
+                string s = "Finish No " + NoTest.ToString();
+                writer.WriteLine(s);
+                NoTest = NoTest + 1;
+                EndEpisode(); // Finish this test and start next test
+            }
         }
+        // else NoTest already larger than TotalTests, do nothing, wait for user to close the game
     }
 
 

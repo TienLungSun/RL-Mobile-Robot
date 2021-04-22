@@ -1,9 +1,13 @@
-================================= (I) Build a test scene ====================================================================
-1. One scene with more obstacles
+================================= (I) Find the trained NN  ==================================================================
+After training, the trained NN is stored in ml agent folder\config\ppo\results\1\*.onnx
 
-2. Remove "Decision Requester" component (we will manually do decision request)
 
-3. Import a trained NN model (e.g., MobileRobot.onnx) to project
+================================= (II) Build a test scene ====================================================================
+1. Create a test environment (e.g., more obstacles with different orientations)
+
+2. Remove "Decision Requester" component (we will manually conduct decision request)
+
+3. Drage this trained NN (e.g., MobileRobot.onnx) to your Unity project 
 
 4. Behavior Parameters
       Model -> Assign a trained NN model
@@ -12,15 +16,16 @@
 5. Create your own Agent script
       see "Car_Agent_s8.cs" at my https://github.com/TienLungSun/RL-Mobile-Robot
       Start() - run ONLY ONCE when we Play in Unity
+      OnApplicationQuit() - close the csv file if user stop the game
       OnEpisodeBegin() - run every time we start a new training session
+      ReachGoal() - determine whether the agent reach goal or not
       Update() - run every game frame
-          if the agent reach goal -> stop action
-          else run RequestDecision() to call NN to perform actions
+          if the agent does not reach goal, then run RequestDecision() to call NN to perform actions
       DetermineStage() - determine the agent's stage (1, 2, 3) based on its relative position with the goal
       CollectObservations() - (1, 0, 0, facing angle, d1, d2, ..., d18), (0, 1, 0, 0, d1-d18), (0, 0, 1, 0, d1-d18)
       OnActionReceived(vectorAction) - 
            1. Perform actions
-           2. record (t, x, y)
+           2. record (t, x, y, reward of this step)
            
 6. Save your script and assign public variables
 
@@ -29,18 +34,18 @@
 8. Examine the output Excel file "trajectory.csv" 
 
 
-================================= (II) Test performance ================================================================================
+================================= (III) Analyze neural network performance ==============================================================
 
 1. Run N times to collect N trajectory files 
 
-2. Calculate steps and rewards 
+2. For each trajectory, calculate the number of steps and the accumulated rewards of this trajectory
 
-3. Draw box plots of steps and rewards
+3. Draw box plots to visualize the distribution of the steps and rewards of these N trajectories
 
 4. Show trajectory of these tests
 
 
-================================= (III) Experiment with NN structure ====================================================================
+================================= (IV) Experiment with NN structure ====================================================================
 1. Open MobileRobot.yaml 
 
 2. max. steps -> 2M
@@ -53,10 +58,16 @@
 
 6. Test the trained NN model 
 
-================================= (IV) How NN interacts with the training VE  ====================================================================
+================================= (V) How the way NN interacts with the training VE affect the training ?  =========================================
 time horizon, buffer size (1000, 20480) -> (500, 10000)
 
-================================= (V) Reward engineering  =========================================================================================
+
+================================= (VI) How training environment affect?  ==============================================================================
+training VE > test VE
+training VE < test VE
+different obstacle layout in training VE
+
+================================= (VII) Reward engineering  =========================================================================================
 every step -0.005*stage
 reach goal: +100, finish training session, start a new training
 hit wall or blocks: -0.5, DO NOT FINISH TRAINING

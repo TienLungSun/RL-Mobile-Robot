@@ -1,0 +1,10 @@
+Save ML Agent to C:\
+
+cd C:\ml-agents-release_10\config\ppo
+mlagents-learn TouchCube.yaml --run-id=1 --force
+
+mlagents-learn TouchCube.yaml --initialize-from=1  --run-id=2  --force
+
+cd C:\ml-agents-release_10\config\ppo\results
+tensorboard --logdir=1
+
